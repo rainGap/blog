@@ -8,8 +8,8 @@ title: Monster Win
   <ul class="posts">
       
     {% for post in site.posts %}
-      <li>blog{{post.url}}</li>
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="blog{{ post.url }}">{{ post.title }}</a></li>
+      <li>/blog{{post.url}}</li>
+      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="/blog{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
 
