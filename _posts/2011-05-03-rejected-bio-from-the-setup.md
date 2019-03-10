@@ -102,7 +102,7 @@ employee with a big retention bonus and give up GitHub or turn down
 the Microsoft money and quit Powerset to work on GitHub full-time. You
 can read more about this saga in my blog post entitled [How I Turned
 Down $300,000 from Microsoft to go Full-Time on
-GitHub](http://tom.preston-werner.com/2008/10/18/how-i-turned-down-300k.html).
+GitHub](http://raingap.github.io/blog/2008/10/18/how-i-turned-down-300k.html).
 I think I made the right decision.
 
 Today GitHub has twenty-nine employees and more than 730,000 users with over
