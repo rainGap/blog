@@ -4,14 +4,14 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  
- <title>Tom Preston-Werner</title>
+ <title>æ¢æ¢æ¢”–∫√∂‡π÷ ﬁ</title>
  <link href="http://raingap.github.io/blog/atom.xml" rel="self"/>
  <link href="http://raingap.github.io/blog/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>http://raingap.github.io/blog/</id>
  <author>
-   <name>Tom Preston-Werner</name>
-   <email>tom@mojombo.com</email>
+   <name>MonsterWin</name>
+   <email>foxxofking@gmail.com</email>
  </author>
 
  {% for post in site.posts %}
