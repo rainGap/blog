@@ -10,16 +10,13 @@ title: Unity 使用Shader 对 UGUI Image 进行图像处理
 
 ![原图](/images/1.webp)
 
+![设置色调](/images/2.webp)
 
-![设置色调](../images/2.webp)
+![灰度化](/images/3.webp)
 
+![对比度](/images/4.webp)
 
-![灰度化](../images/3.webp)
-
-
-![对比度](../images/4.webp)
-
-![模糊](../images/5.webp)
+![模糊](/images/5.webp)
 
 
 # Shader
@@ -28,7 +25,7 @@ title: Unity 使用Shader 对 UGUI Image 进行图像处理
 
 ## 以下是色调、灰度化、对比度设置的Shader的代码，我都写在一个Shader里面了  
 
-```c#
+``` c#
 Shader "Custom/UI/Base"
 {
 	Properties
@@ -166,7 +163,7 @@ Shader "Custom/UI/Base"
 
 ```
 
-```c#
+``` c#
 //片段着色器
 fixed4 frag(v2f IN) : SV_Target
 {
@@ -197,28 +194,28 @@ fixed4 frag(v2f IN) : SV_Target
 ```
 
 ## 模糊效果，高斯模糊
-```c#
-			fixed4 frag(v2f IN) : SV_Target
-			{
+``` c#
+fixed4 frag(v2f IN) : SV_Target
+{
 
-                float distance = _Distance;
-                fixed4 computedColor = tex2D(_MainTex, IN.texcoord) * IN.color*0.147761;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y + distance )) * IN.color*0.09474;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y)) * IN.color*0.11831;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x , IN.texcoord.y + distance )) * IN.color*0.11831;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y - distance )) * IN.color*0.09474;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y - distance )) * IN.color*0.09474;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y + distance )) * IN.color*0.09474;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y)) * IN.color*0.11831;
-                computedColor += tex2D(_MainTex, half2(IN.texcoord.x , IN.texcoord.y - distance )) * IN.color*0.11831;
-                return computedColor;
-			}
+	float distance = _Distance;
+	fixed4 computedColor = tex2D(_MainTex, IN.texcoord) * IN.color*0.147761;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y + distance )) * IN.color*0.09474;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y)) * IN.color*0.11831;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x , IN.texcoord.y + distance )) * IN.color*0.11831;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y - distance )) * IN.color*0.09474;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x + distance , IN.texcoord.y - distance )) * IN.color*0.09474;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y + distance )) * IN.color*0.09474;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x - distance , IN.texcoord.y)) * IN.color*0.11831;
+	computedColor += tex2D(_MainTex, half2(IN.texcoord.x , IN.texcoord.y - distance )) * IN.color*0.11831;
+	return computedColor;
+}
 ```
 
 原理很简单：该点像素值等于周边像素值的加权平均。  
 详细解析：http://www.ruanyifeng.com/blog/2012/11/gaussian_blur.html
 
-![距离为1像素的权重矩阵](../images/6.webp)
+![距离为1像素的权重矩阵](/images/6.webp)
 
 
 # 在C#代码中的应用
@@ -269,7 +266,7 @@ public static class UIExtend
 }
 ```
 对Image实现灰度化的缓动  
-![缓动效果图](../images/7.webp)
+![缓动效果图](/images/7.webp)
 
 
 ```c#
