@@ -8,7 +8,7 @@ title: Unity 使用Shader 对 UGUI Image 进行图像处理
 
 # 先放效果图
 
-![原图](../images/1.webp)
+![原图](/images/1.webp)
 
 
 ![设置色调](../images/2.webp)
